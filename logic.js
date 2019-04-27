@@ -34,6 +34,7 @@ d3.json(API_quakes, function (geoJson) {
     createMap(earthquakes);
 });
 
+
 var plateBoundary = new L.LayerGroup();
 
 d3.json(API_plates, function (geoJson) {
@@ -41,7 +42,7 @@ d3.json(API_plates, function (geoJson) {
         style: function (geoJsonFeature) {
             return {
                 weight: 2,
-                color: 'Pink '
+                color: 'Red '
             }
         },
     }).addTo(plateBoundary);
@@ -73,7 +74,7 @@ function createMap() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.high-contrast',
-        // accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+ 
         accessToken:"pk.eyJ1IjoiYW5kcmV3aG9hbmcwOSIsImEiOiJjamt1Zno2ejcwNTFkM3FwZGJrOXk1bWxxIn0.BCVeyxRcjhsbOLVqnx5uTQ"
     });
 
@@ -81,7 +82,7 @@ function createMap() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.streets',
-        // accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+     
         accessToken:"pk.eyJ1IjoiYW5kcmV3aG9hbmcwOSIsImEiOiJjamt1Zno2ejcwNTFkM3FwZGJrOXk1bWxxIn0.BCVeyxRcjhsbOLVqnx5uTQ"
     });
 
@@ -89,7 +90,7 @@ function createMap() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.dark',
-        // accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+      
         accessToken:"pk.eyJ1IjoiYW5kcmV3aG9hbmcwOSIsImEiOiJjamt1Zno2ejcwNTFkM3FwZGJrOXk1bWxxIn0.BCVeyxRcjhsbOLVqnx5uTQ"
     });
 
@@ -98,7 +99,7 @@ function createMap() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.satellite',
-        // accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+     
         accessToken:"pk.eyJ1IjoiYW5kcmV3aG9hbmcwOSIsImEiOiJjamt1Zno2ejcwNTFkM3FwZGJrOXk1bWxxIn0.BCVeyxRcjhsbOLVqnx5uTQ"
     });
 
@@ -116,8 +117,8 @@ function createMap() {
     };
 
     var mymap = L.map('mymap', {
-        center: [40, -99],
-        zoom: 4.3,
+        center: [8.7832, - 34.5085],
+        zoom: 2 ,
 
         layers: [streetMap, earthquakes, plateBoundary]
     });
@@ -140,11 +141,10 @@ function createMap() {
                 '<i style="background:' + Color(magnitude[i] + 1) + '"></i> ' +
                 magnitude[i] + (magnitude[i + 1] ? '&ndash;' + magnitude[i + 1] + '<br>' : '+');
         }
-
+        
         return div;
     };
     legend.addTo(mymap);
 }
-
 
 // createMap()
