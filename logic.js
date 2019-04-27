@@ -41,7 +41,7 @@ d3.json(API_plates, function (geoJson) {
         style: function (geoJsonFeature) {
             return {
                 weight: 2,
-                color: 'magenta'
+                color: 'Pink '
             }
         },
     }).addTo(plateBoundary);
@@ -56,13 +56,13 @@ function Color(magnitude) {
     else if (magnitude > 4) {
         return 'darkorange'
     } else if (magnitude > 3) {
-        return 'tan'
+        return 'Dark Yello '
     } else if (magnitude > 2) {
-        return 'yellow'
+        return 'Blue'
     } else if (magnitude > 1) {
         return 'darkgreen'
     } else {
-        return 'lightgreen'
+        return 'darkgreen'
     }
 };
 
@@ -73,21 +73,24 @@ function createMap() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.high-contrast',
-        accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        // accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        accessToken:"pk.eyJ1IjoiYW5kcmV3aG9hbmcwOSIsImEiOiJjamt1Zno2ejcwNTFkM3FwZGJrOXk1bWxxIn0.BCVeyxRcjhsbOLVqnx5uTQ"
     });
 
     var streetMap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        // accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        accessToken:"pk.eyJ1IjoiYW5kcmV3aG9hbmcwOSIsImEiOiJjamt1Zno2ejcwNTFkM3FwZGJrOXk1bWxxIn0.BCVeyxRcjhsbOLVqnx5uTQ"
     });
 
     var darkMap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.dark',
-        accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        // accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        accessToken:"pk.eyJ1IjoiYW5kcmV3aG9hbmcwOSIsImEiOiJjamt1Zno2ejcwNTFkM3FwZGJrOXk1bWxxIn0.BCVeyxRcjhsbOLVqnx5uTQ"
     });
 
 
@@ -95,7 +98,8 @@ function createMap() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.satellite',
-        accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        // accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
+        accessToken:"pk.eyJ1IjoiYW5kcmV3aG9hbmcwOSIsImEiOiJjamt1Zno2ejcwNTFkM3FwZGJrOXk1bWxxIn0.BCVeyxRcjhsbOLVqnx5uTQ"
     });
 
 
@@ -114,12 +118,7 @@ function createMap() {
     var mymap = L.map('mymap', {
         center: [40, -99],
         zoom: 4.3,
-        // timeDimension: true,
-        // timeDimensionOptions: {
-        //     timeInterval: "2018-04-01/2018-04-05",
-        //     period: "PT1H"
-        // },
-        // timeDimensionControl: true,
+
         layers: [streetMap, earthquakes, plateBoundary]
     });
 
