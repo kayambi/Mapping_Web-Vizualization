@@ -1,16 +1,16 @@
-# Mapping_Web-Vizualization
+#Visualizing Data with Leaflet
 
-Import & Visualize the Data
-Create a map using Leaflet that plots all of the earthquakes from your data set based on their longitude and latitude.
+The USGS is interested in building a new set of tools that will allow them visualize their earthquake data. They collect a massive amount of data from all over the world each day, but they lack a meaningful way of displaying it. Their hope is that being able to visualize their data will allow them to better educate the public and other government organizations (and hopefully secure more funding..) on issues facing our planet.
+
+Overview
+
+Problem: The USGS is interested in building a new set of tools that will allow them visualize their earthquake data. They collect a massive amount of data from all over the world each day, but they lack a meaningful way of displaying it. Their hope is that being able to visualize their data will allow them to better educate the public and other government organizations (and hopefully secure more funding..) on issues facing our planet.
+Organization: Uses HTML, CSS, and JavaScript to create a map using Leaflet.js that plots all of the earthquakes from the data set based on their longitude and latitude.
+How to run: Run the HTML web page in a browser.
+Deployed app:https://kayambi.github.io/Mapping_Web-Vizualization/
 
 
-The data markers should reflect the magnitude of the earthquake in their size and color. Earthquakes with higher magnitudes should appear larger and darker in color.
 
-
-Include popups that provide additional information about the earthquake when the user click on it is
-
-Create a legend that will provide context for the map data.
-Deplyed: https://kayambi.github.io/Mapping_Web-Vizualization/
 
 
 
